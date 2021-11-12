@@ -12,8 +12,6 @@
 
 #include "get_next_line.h"
 
-#include "get_next_line.h"
-
 static char	*ft_trim(char **s, char **buf, int len)
 {
 	char	*ln;
