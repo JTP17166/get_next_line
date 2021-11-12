@@ -37,6 +37,11 @@ static char	*ft_trim(char **s, char **buf, int len)
 	return (ln);
 }
 
+/*
+* L24 -> Allocates the length of the string to i;
+* L27 -> ln 
+*/
+
 static char	*ft_get(char **s, int len)
 {
 	char	*ln;
