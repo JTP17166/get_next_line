@@ -47,7 +47,7 @@ static char	*ft_trim(char **s, char **buf, int len)
 * L33 -> tmp = strdup -- save a copy of a string.
 * L35 -> Frees *s memory.
 * L36 -> *s = tmp = copy of a string.
-* L37 -> Returns ln.
+* L37 -> Returns ln (space used by the line).
 */
 
 static char	*ft_get(char **s, int len)
@@ -73,6 +73,16 @@ static char	*ft_get(char **s, int len)
 	(*s) = tmp;
 	return (ln);
 }
+
+/*
+* L53 -> s = storage containing newline.
+* L53 -> len = length of the string.
+* L59 -> ln = Allocated memory with malloc.
+* L71 -> tmp = strdup -- save a copy of a string.
+* L72 -> Frees *s.
+* L73 -> *s = tmp = copy of the string.
+* L74 -> Returns ln (copy of the line).
+*/
 
 static char	*ft_main(char **s, char **buf, int i)
 {
