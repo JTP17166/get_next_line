@@ -38,8 +38,18 @@ static char	*ft_trim(char **s, char **buf, int len)
 }
 
 /*
-* L24 -> Allocates the length of the string to i;
-* L27 -> ln 
+* L17 -> s = storage.
+* L17 -> buf = buffer.
+* L17 -> len = line size.
+* L24 -> Allocates the length of the string to i.
+* L27 -> ln = Allocated memory by malloc.
+* L30 -> memcpy -- copy memory area.
+* L31 -> memcpy -- copy memory area.
+* L32 -> Puts final character at the end.
+* L33 -> tmp = strdup -- save a copy of a string.
+* L35 -> Frees *s memory.
+* L36 -> *s = tmp = copy of a string.
+* L37 -> Returns ln.
 */
 
 static char	*ft_get(char **s, int len)
