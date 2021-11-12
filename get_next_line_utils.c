@@ -6,7 +6,7 @@
 /*   By: joaopere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 14:57:07 by joaopere          #+#    #+#             */
-/*   Updated: 2021/11/11 16:42:01 by joaopere         ###   ########.fr       */
+/*   Updated: 2021/11/12 12:40:45 by joaopere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,14 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	i = 0;
 	ptr = NULL;
-	s1l = ft_strlen(s1);
-	s2l = ft_strlen(s2);
-	if (!s1l && !s2l)
+	if (!s1 && !s2)
 		return (NULL);
 	if (s1 && !s2)
 		return (ft_strdup(s1));
 	else if (!s1 && s2)
 		return (ft_strdup(s2));
+	s1l = ft_strlen(s1);
+	s2l = ft_strlen(s2);
 	ptr = (char *)malloc(sizeof(char) * (s1l + s2l + 1));
 	if (!ptr)
 		return (NULL);
@@ -106,21 +106,11 @@ char	*ft_strchr(const char *s, int c)
 		while (*tmp)
 		{
 			if (*tmp == (char)c)
-			{
-				while (*tmp)
-				{
-					if (*tmp == (char)c)
-					{
-						return (tmp);
-					}
-					tmp++;
-				}
-				if (*tmp == c)
-				{
-					return (tmp);
-				}
-			}
+				return (tmp);
+			tmp++;
 		}
+		if (*tmp == c)
+			return (tmp);
 	}
-		return (NULL);
+	return (NULL);
 }

@@ -6,9 +6,11 @@
 /*   By: joaopere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 12:44:23 by joaopere          #+#    #+#             */
-/*   Updated: 2021/11/11 16:56:01 by joaopere         ###   ########.fr       */
+/*   Updated: 2021/11/12 15:52:58 by joaopere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "get_next_line.h"
 
 #include "get_next_line.h"
 
@@ -23,8 +25,8 @@ static char	*ft_trim(char **s, char **buf, int len)
 	else
 		i = 0;
 	ln = (char *)malloc(sizeof(char) * len + i + 1);
-		if (!ln)
-			return (0);
+	if (!ln)
+		return (0);
 	ft_memcpy(ln, *s, i);
 	ft_memcpy(ln + i, *buf, len);
 	ln[len + i] = '\0';
@@ -116,30 +118,3 @@ char	*get_next_line(int fd)
 		ln = ft_get(&stor, (buf - stor) + 1);
 	return (ln);
 }
-
-/*
-* L15 -> Allocates len + 1 bytes and copies the string. 
-* Merges storage with new line, 
-* and stores the reminder of buf in storage.
-* L23 -> strlen -- find length of string.
-* L32 -> Returns 0 if there are no more bytes to read next time.
-* L34 -> memcpy -- copy memory area.
-* L35 -> memcpy -- copy memory area.
-* L37 -> strdup -- save a copy of a string.
-*
-* L46 -> Allocared n bytes + 1 and copies the string. 
-* Then updates the storage keeping the remainder.
-* L64 -> strdup -- save a copy of a string.
-*
-* L70 -> Calls the functions and starts the program.
-* L86 -> strchr -- locate character in string.
-* L89 -> Allocates and copies the string.
-* L93 -> Allocates (with malloc(3)) and returns a new
-* string, which is the result of the concatenation
-* of ’s1’ and ’s2’.
-*
-* L103 -> Looks for a new line in storage.
-* L116 -> strchr -- locate character in string.
-* L127 -> Calls the functions and starts the program.
-* L133 -> Allocared n bytes + 1 and copies the string. 
-*/
