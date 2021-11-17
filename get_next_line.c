@@ -41,7 +41,7 @@ char	*ft_save(char *save)
 /*
 * L22/23 -> While save[i] exists and its different from the newline (\n) i moves another position inside save;
 * L24/25/26 -> If there's an error with save[i]frees the memory of save and returns null;
-* L29 -> S is the memory allocation using malloc;
+* L29 -> S is the memory allocation using malloc - what has been returned + null;
 * L29 -> strlen -- find length of string;
 * L30/31 -> If there's an error with s returns NULL;
 * L34/35 -> Creates a copy of the saved line;
@@ -81,7 +81,7 @@ char	*ft_get_line(char *save)
 /*
 * L59/60 -> If there's an error with save returns NULL;
 * L61/62 -> While save[i] exists and its different from the newline (\n) i moves another position inside save;
-* L63 -> S is the memory allocation using malloc;
+* L63 -> S is the memory allocation using malloc (+2 means of null character (\0) and newline character (\n));
 * L64/65 -> If there's an error with s returns NULL;
 * L67/69/70 -> While save[i] exists and its different from the newline (\n), s[i] becames a copy of save[i] and i increments;
 * L72/74/75 -> If save[i] equals to the newline (\n), s[i] receives a copy of the \n and i increments;
