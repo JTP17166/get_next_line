@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joaopere <joaopere@student.42.fr>          +#+  +:+       +#+        */
+/*   By: joaopere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/16 15:11:44 by joaopere          #+#    #+#             */
-/*   Updated: 2021/11/17 16:04:41 by joaopere         ###   ########.fr       */
+/*   Created: 2021/11/17 16:04:58 by joaopere          #+#    #+#             */
+/*   Updated: 2021/11/17 16:05:08 by joaopere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,18 +95,18 @@ char	*ft_read_save(int fd, char *save)
 char	*get_next_line(int fd)
 {
 	char		*line;
-	static char	*save;
+	static char	*save[1024];
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 	{
 		return (0);
 	}
-	save = ft_read_save(fd, save);
-	if (!save)
+	save[fd] = ft_read_save(fd, save[fd]);
+	if (!save[fd])
 	{
 		return (NULL);
 	}
-	line = ft_get_line(save);
-	save = ft_save(save);
+	line = ft_get_line(save[fd]);
+	save[fd] = ft_save(save[fd]);
 	return (line);
 }
