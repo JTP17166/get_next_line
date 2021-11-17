@@ -28,6 +28,10 @@ size_t	ft_strlen(char *s)
 	return (i);
 }
 
+/*
+* strlen -- find length of string
+*/
+
 char	*ft_strchr(char *s, int c)
 {
 	int	i;
@@ -51,6 +55,10 @@ char	*ft_strchr(char *s, int c)
 	}
 	return (0);
 }
+
+/*
+* strchr -- locate character in string
+*/
 
 char	*ft_strjoin(char *s1, char *s2)
 {
@@ -79,3 +87,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	free(s1);
 	return (str);
 }
+
+/*
+* strjoin -- joins two strings.
+*/
